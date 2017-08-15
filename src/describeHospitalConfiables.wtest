@@ -21,4 +21,12 @@ describe "Tests para probar la confiabilidad de un Hospital" {
 		hospital.agregaPacientes([pacienteChismoso, pacienteChismoso, pacienteChismoso, pacienteChismoso, pacienteChismoso])
 		assert.that(hospital.dasConfianza())
 	}
+	
+	test "Si alguien se enferma y lo curan, su salud es mayor que cuando estaba enfermo"{
+		const saludDeEnfermo = 10
+		raul.salud(saludDeEnfermo)
+		pepe.sana(raul)
+		const saludAlCurarse = raul.salud()
+		assert.that(saludAlCurarse > saludDeEnfermo)
+	}
 }
