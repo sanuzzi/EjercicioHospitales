@@ -25,10 +25,15 @@ object hospital {
 		paciente => paciente.chisme()
 	})
 	method pacientes() = pacientes
+	method dasConfianza() = self.calidad() >= 100 && self.fama() >= 1000
 }
 
 object pepe {
-	method calidad() = 8
+	var calidad = 0
+	method calidad() = calidad
+	method calidad(nuevaCalidad){
+		calidad = nuevaCalidad
+	}
 }
 
 object marta {
@@ -40,7 +45,10 @@ object marcos {
 }
 
 object raul {
-	method chisme() = 10
-	
+	var chisme = 10
+	method chisme() = chisme
+	method chisme(nuevoChisme){
+		chisme = nuevoChisme
+	}
 }
 
